@@ -116,6 +116,19 @@ def game_hash
   }
 end
 
-def num_points_scored(name)
-  
+def num_points_scored(member)
+  team_info = game_hash
+  team_info.each do |travel, info|
+    info.each do |more_info, more|
+      if more_info == :players
+       more.each do |name, stat|
+           stat.each do |type, value|
+             if type == :points and member == name
+               return value
+             end
+           end
+         end
+       end
+     end
+   end
 end
