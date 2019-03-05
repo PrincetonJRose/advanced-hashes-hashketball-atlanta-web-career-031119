@@ -116,14 +116,14 @@ def game_hash
   }
 end
 
-def num_points_scored(member)
+def num_points_scored(team_member)
   team_info = game_hash
   team_info.each do |travel, info|
     info.each do |more_info, more|
       if more_info == :players
        more.each do |name, stat|
            stat.each do |type, value|
-             if type == :points and member == name
+             if type == :points and team_member == name
                return value
              end
            end
@@ -132,3 +132,5 @@ def num_points_scored(member)
      end
    end
 end
+
+def shoe_size(team_member)
