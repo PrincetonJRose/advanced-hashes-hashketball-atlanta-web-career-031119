@@ -158,6 +158,7 @@ def team_colors(team_name)
         if more == team_name
           info.each do |even_more, yup|
             if even_more == :color
+              puts yup
               return yup
             end
           end
