@@ -154,7 +154,7 @@ def team_colors(team_name)
   team_info = game_hash
   team_info.each do |travel, info|
     info.each do |more_info, more|
-      if more_info == :colors
+      if more_info == :colors and more_info[:team_name] == team_name
         return more
       end
     end
