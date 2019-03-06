@@ -185,7 +185,10 @@ def player_numbers(team_name)
         if level2 == :players
           for level3 in team_info[level1][level2]
             for level4 in team_info[level1][level2][level3]
+              puts team_info[level1][level2][level3]
+              puts team_info[level1][level2][level3][level4]
               if level4 == :number
+                
                 jersey_numbers << team_info[level1][level2][level3][level4]
               end
             end
