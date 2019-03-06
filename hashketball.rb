@@ -179,13 +179,13 @@ end
 def player_numbers(team_name)
   jersey_numbers = []
   team_info = game_hash
-  team_info.each do |travel, info|
-    if info.values.include?(team_name)
-      info.each do |more_info, more|
-        more.each do |name, stat|
-          stat.each do |type, value|
-            if type == :number
-              jersey_numbers.push(value)
+  for level1 in team_info.keys
+    if team_info[level1].values.include?(team_name)
+      for level2 in team_info[level1]
+        if level2 == :players
+          for level3 in team_info[level1][level2]
+            if level3 == :number
+              jersey_numbers.push(team_info[level1][level2][level3])
             end
           end
         end
