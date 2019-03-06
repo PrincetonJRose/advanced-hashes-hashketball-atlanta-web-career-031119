@@ -217,6 +217,7 @@ end
 def big_shoe_rebounds
   team_info = game_hash
   shoe_sizes = []
+  kid_name = ''
   team_info.each do |travel, info|
     info.each do |more_info, more|
       if more_info == :players
