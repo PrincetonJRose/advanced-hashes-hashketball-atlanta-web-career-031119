@@ -229,6 +229,7 @@ def big_shoe_rebounds
     end
   end
   biggest_shoe = shoe_sizes.max
+  puts biggest_shoe
   team_info.each do |travel, info|
     info.each do |more_info, more|
       if more_info == :players
