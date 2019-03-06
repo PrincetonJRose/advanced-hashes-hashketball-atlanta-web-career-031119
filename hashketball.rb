@@ -180,7 +180,7 @@ def player_numbers(team_name)
   team_info = game_hash
   jersey_numbers = []
   team_info.each do |travel, info|
-    if info.values.include(team_name)
+    if info.values.include?(team_name)
       info.each do |more_info, more|
         more.each do |name, stat|
           stat.each do |type, value|
