@@ -188,7 +188,7 @@ def player_numbers(team_name)
               puts team_info[level1][level2][level3]
               puts team_info[level1][level2][level3][level4]
               if level4 == :number
-                
+
                 jersey_numbers << team_info[level1][level2][level3][level4]
               end
             end
