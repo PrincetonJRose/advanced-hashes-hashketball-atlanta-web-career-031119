@@ -175,3 +175,23 @@ def team_names
   end
   return teams_playing
 end
+
+def player_numbers(team_name)
+  team_info = game_hash
+  jersey_numbers = []
+  team_info.each do |travel, info|
+    if info.values.include(team_name)
+      info.each do |more_info, more|
+        more.each do |name, stat|
+          stat.each do |type, value|
+            if type == :number
+              jersey_numbers.push(value)
+            end
+          end
+        end
+      end
+    end
+  end
+  jersey_numbers
+end
+
