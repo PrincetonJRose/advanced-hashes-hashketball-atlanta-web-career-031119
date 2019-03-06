@@ -196,3 +196,18 @@ def player_numbers(team_name)
   end
   return jersey_numbers.sort
 end
+
+def player_stats(team_member)
+  team_info = game_hash
+  team_info.each do |travel, info|
+    info.each do |more_info, more|
+      if more_info == :players
+        more.each do |name, stat|
+          if name == team_member
+            return name
+          end
+        end
+      end
+    end
+  end
+end
