@@ -186,7 +186,7 @@ def player_numbers(team_name)
           more.each do |name, stat|
             stat.each do |type, value|
               if type == :number
-                return value
+                jersey_numbers.push(value)
               end
             end
           end
