@@ -155,7 +155,7 @@ def team_colors(team_name)
   team_info.each do |travel, info|
     if info.values.include?(team_name)
       info.each do |more_info, more|
-        if more_info == :color
+        if more_info == :colors
           return more
         end
       end
