@@ -222,7 +222,7 @@ def big_shoe_rebounds
       if more_info == :players
         more.each do |name, stat|
           stat.each do |type, value|
-            if stat == :shoe
+            if type == :shoe
               shoe_sizes.push(value)
             end
           end
@@ -238,7 +238,7 @@ def big_shoe_rebounds
       if more_info == :players
         more.each do |name, stat|
           stat.each do |type, value|
-            if stat == :shoe and value == biggest_shoe
+            if type == :shoe and value == biggest_shoe
               kid_name = name
             end
           end
@@ -251,7 +251,7 @@ def big_shoe_rebounds
       if more_info == :players
         more.each do |name, stat|
           stat.each do |type, value|
-            if stat == :rebounds and kid_name == name
+            if type == :rebounds and kid_name == name
               return value
             end
           end
