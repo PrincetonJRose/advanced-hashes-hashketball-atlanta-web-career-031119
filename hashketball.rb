@@ -174,5 +174,3 @@ def team_names
     end
   end
 end
-
-  
