@@ -214,5 +214,45 @@ end
 
 def big_shoe_rebounds
   team_info = game_hash
-  
+  shoe_sizes = []
+  team_info.each do |travel, info|
+    info.each do |more_info, more|
+      if more_info == :players
+        more.each do |name, stat|
+          stat.each do |type, value|
+            if stat == :shoe
+              shoe_sizes.push(value)
+            end
+          end
+        end
+      end
+    end
+  end
+  biggest_shoe = shoe_sizes.max
+  team_info.each do |travel, info|
+    info.each do |more_info, more|
+      if more_info == :players
+        more.each do |name, stat|
+          stat.each do |type, value|
+            if stat == :shoe and value == biggest_shoe
+              kid_name = name
+            end
+          end
+        end
+      end
+    end
+  end
+  team_info.each do |travel, info|
+    info.each do |more_info, more|
+      if more_info == :players
+        more.each do |name, stat|
+          stat.each do |type, value|
+            if stat == :rebounds and kid_name == name
+              return value
+            end
+          end
+        end
+      end
+    end
+  end
 end
