@@ -204,7 +204,7 @@ def player_stats(team_member)
       if more_info == :players
         more.each do |name, stat|
           if name == team_member
-            return name
+            return more
           end
         end
       end
