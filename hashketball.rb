@@ -162,3 +162,17 @@ def team_colors(team_name)
     end
   end
 end
+
+def team_names
+  team_info = game_hash
+  teams_playing = []
+  team_info.each do |travel, info|
+    info.each do |more_info, more|
+      if more_info == :team_name
+        teams_playing.push(more)
+      end
+    end
+  end
+end
+
+  
